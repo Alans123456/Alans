@@ -33,7 +33,7 @@ export default function ProjectsSection() {
           title: r.name,
           subtitle: r.description || "No description",
           description: r.description || "No description",
-          image: `https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop`,
+          image: "/images/default.png",
           tech: ["GitHub"],
           github: r.html_url,
           live: r.homepage || "#",
@@ -93,11 +93,11 @@ export default function ProjectsSection() {
   if (projects.length === 0) return null;
 
   const current = projects[index];
-  if (!current) return null;
 
   return (
     <section
       ref={sectionRef}
+      id="projects"
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#050608] via-[#050608] to-[#141414]"
     >
       {/* background big word + glow */}
@@ -111,13 +111,9 @@ export default function ProjectsSection() {
         </p>
       </div>
 
-      {/* floating content, no card/container border */}
+      {/* floating content, centered in screen */}
       <div
-        className={`
-          absolute left-1/2 top-1/2 w-full px-6 md:px-10 lg:px-16 max-w-7xl
-          flex flex-col md:flex-row items-center md:items-stretch justify-between gap-8 md:gap-12
-          transition-all duration-700 ease-out
-        `}
+        className="absolute left-1/2 top-1/2 w-full px-6 md:px-10 lg:px-16 max-w-7xl flex flex-col md:flex-row items-center md:items-stretch justify-between gap-8 md:gap-12 transition-all duration-700 ease-out"
         style={{
           transform: getTransform(),
           opacity: phase === "center" ? 1 : 0,
@@ -136,7 +132,7 @@ export default function ProjectsSection() {
           </div>
         </div>
 
-        {/* RIGHT: text, free-floating like About */}
+        {/* RIGHT: text */}
         <div className="relative flex-1 flex flex-col gap-3 max-w-xl">
           <span className="text-xs md:text-sm tracking-[0.3em] uppercase text-yellow-400/80">
             Featured project
@@ -188,7 +184,7 @@ export default function ProjectsSection() {
         </div>
       </div>
 
-      {/* dots */}
+      {/* dots at bottom of screen */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex justify-center gap-2">
         {projects.map((_, i) => (
           <span

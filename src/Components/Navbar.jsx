@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import logo from "../images/Logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -64,7 +65,7 @@ export default function Navbar() {
           }`}
         >
           <Image
-            src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=2070&auto=format&fit=crop"
+            src={logo}
             alt="Logo"
             width={48}
             height={48}

@@ -120,12 +120,7 @@ export default function AboutSection() {
 
       {/* main floating content */}
       <div
-        className={`
-          relative z-10 w-full px-6 md:px-10 lg:px-16
-          flex flex-col md:flex-row items-center justify-between gap-10
-          transition-all duration-700 ease-out
-          ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
-        `}
+        className={`relative z-10 w-full px-6 md:px-10 lg:px-16 flex flex-col md:flex-row items-center justify-between gap-10 transition-all duration-700 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
       >
         {/* LEFT: images describing skill */}
         <div className="relative flex-1 flex items-center justify-center">
@@ -158,12 +153,7 @@ export default function AboutSection() {
 
           {/* main skill image */}
           <div
-            className="
-              relative w-60 h-40 md:w-80 md:h-56 lg:w-[400px] lg:h-[280px]
-              rounded-[2rem] shadow-[0_18px_55px_rgba(0,0,0,0.85)] overflow-hidden
-              bg-black border border-yellow-500/60
-              transition-transform duration-500 ease-out
-            "
+            className="relative w-60 h-40 md:w-80 md:h-56 lg:w-[400px] lg:h-[280px] rounded-[2rem] shadow-[0_18px_55px_rgba(0,0,0,0.85)] overflow-hidden bg-black border border-yellow-500/60 transition-transform duration-500 ease-out"
             style={{
               transform: `translate3d(${offset.x * 10}px, ${
                 offset.y * -8
